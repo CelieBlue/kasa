@@ -3,7 +3,7 @@ import React from 'react'
 export default function Error() {
     return(
         <div>
-            <h1>Oops ! Cette page n'existe pas !</h1>
+            <h1>Oups ! La page que vous demandez n'existe pas.</h1>
         </div>
     )
 }
