@@ -7,7 +7,8 @@ import {
 import AppLayout from './Layout/AppLayout';
 import Home from './Pages/Home';
 import About from './Pages/About';
-import NotFound from './Components/NotFound/NotFound';
+import Accomodation from './Pages/Accomodation';
+import NotFound from './Components/NotFound';
 
 const router = createBrowserRouter([
   {
@@ -23,6 +24,11 @@ const router = createBrowserRouter([
       {
         path:'/About',
         element: <About />,
+        errorElement: <NotFound />,
+      },
+      {
+        path:'/Accomodation',
+        element: <Accomodation />,
         errorElement: <NotFound />,
       },
       {

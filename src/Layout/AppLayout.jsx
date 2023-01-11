@@ -1,9 +1,10 @@
 import { Outlet } from "react-router-dom";
-import Header from "../Components/Header/Header";
+import Header from "../Components/Header";
+import '../Styles/Layout.css'
 
 const AppLayout = () => {
     return (
-        <>
+        <div className="container">
             <Header />
             <main>
                 <Outlet />
@@ -11,7 +12,7 @@ const AppLayout = () => {
             <footer>
                 Footer
             </footer>
-        </>
+        </div>
     )       
 };
 
