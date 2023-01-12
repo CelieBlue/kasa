@@ -1,10 +1,11 @@
-import React from 'react'
+import React from 'react';
+import { useParams } from 'react-router-dom';
 
 export default function Accomodation() {
+    const {id} = useParams();
     return(
-        <div>
-            <h1>Cozy loft on the Canal Saint-Martin
-            </h1>
-        </div>
+        <>
+            <h1>Logement {id}</h1>
+        </>
     )
 }

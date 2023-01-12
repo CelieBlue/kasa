@@ -17,22 +17,22 @@ const router = createBrowserRouter([
     errorElement: <NotFound />,
     children: [
       {
-        path:'/',
+        path: '/',
         element: <Home />,
         errorElement: <NotFound />,
       },
       {
-        path:'/About',
-        element: <About />,
-        errorElement: <NotFound />,
-      },
-      {
-        path:'/Accomodation',
+        path: 'Accomodation/:id',
         element: <Accomodation />,
         errorElement: <NotFound />,
       },
       {
-        path:'*',
+        path: '/About',
+        element: <About />,
+        errorElement: <NotFound />,
+      },
+      {
+        path: '*',
         element: <NotFound />,
       },
     ]
