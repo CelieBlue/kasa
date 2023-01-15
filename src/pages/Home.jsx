@@ -1,11 +1,14 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import bannerHome from '../assets/bannerHome.png';
+import '../Styles/Layout.css'
 import '../Styles/Home.css';
 
 export default function Home() {
   return (
   <> 
       <div className="banner">
+        <img src={ bannerHome } alt="bannière paysage" />
         <h1>Chez vous, partout et ailleurs</h1>
       </div>
 
