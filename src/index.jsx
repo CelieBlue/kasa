@@ -5,9 +5,9 @@ import {
   RouterProvider,
 } from 'react-router-dom';
 import AppLayout from './Layout/AppLayout';
-import Home from './Pages/Home';
-import About from './Pages/About';
+import Home, { loader as homeLoader } from './Pages/Home';
 import Accomodation from './Pages/Accomodation';
+import About from './Pages/About';
 import NotFound from './Components/NotFound';
 
 const router = createBrowserRouter([
@@ -20,11 +20,13 @@ const router = createBrowserRouter([
         path: '/',
         element: <Home />,
         errorElement: <NotFound />,
+        loader: homeLoader,
       },
       {
         path: 'Accomodation/:id',
         element: <Accomodation />,
         errorElement: <NotFound />,
+        // loader: accomodationLoader,
       },
       {
         path: '/About',

@@ -1,40 +1,45 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useLoaderData } from 'react-router-dom';
 import bannerHome from '../assets/bannerHome.png';
+// import pictureDefault from '../assets/logement_default.jpg'
 import '../Styles/Layout.css'
 import '../Styles/Home.css';
 
+// const homeLoader = async () => {
+//   const data = getSomeData();
+//   return json(data);
+// };
+
+export const loader = async() => {
+  const res = await fetch("http://localhost:3000/accomodations.json");
+  const data = await res.json();
+  return data;
+}
+
 export default function Home() {
+  const accomodations = useLoaderData();
+
   return (
   <> 
       <div className="banner">
         <img src={ bannerHome } alt="bannière paysage" />
         <h1>Chez vous, partout et ailleurs</h1>
       </div>
-
-      <div className="accomodation">
-        <Link to="/Accomodation/1">
-          <div className="card">
-              <span>Titre de location</span>
-          </div>
-        </Link>
-
-        <div className="card">
-          <span><Link to="/Accomodation/2">Accommodation 2</Link></span>
-        </div>
-        <div className="card">
-          <span><Link to="/Accomodation/3">Accommodation 3</Link></span>
-        </div>
-        <div className="card">
-          <span><Link to="/Accomodation/4">Accommodation 4</Link></span>
-        </div>
-        <div className="card">
-          <span><Link to="/Accomodation/5">Accommodation 5</Link></span>
-        </div>
-        <div className="card">
-          <span><Link to="/Accomodation/6">Accommodation 6</Link></span>
-        </div>
+       
+    {accomodations.length > 0 ? (
+      <div className="accomodations">
+        {accomodations.map((accomodation) => (
+          <Link to={`accomodations/${accomodation.id}`}>
+            <div className="card" key={`accomodation${accomodation.id}`}>
+              <img src={ accomodation.cover } alt="Illustration par défaut" />
+              <h2>Titre de la location</h2>
+            </div>
+          </Link>
+        ))}
       </div>
+    ) : (
+      <p>Il n'y a pas d'hébergement pour le moment</p>
+    )}
   </>
-  )
+  );
 }
