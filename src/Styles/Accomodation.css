@@ -1,0 +1,148 @@
+/**************************** MAIN ACCOMODATIONS ***************************/
+
+.slideshow {
+    width: 100%;
+    height: 415px;
+    border-radius: 25px;
+}
+
+.slideshow img {
+    width: 100%;
+    height: 415px;
+}
+
+/************** INFOS **************/
+
+.infos {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin-top: 30px;
+}
+
+/** Bloc One - Title, Location **/
+
+.infos_bloc_one {
+    display: flex;
+    flex-direction: column;
+    /* gap: 10px; */
+}
+
+.infos_bloc_one h1 {
+    font-size: 36px;
+    font-weight: 500;
+    line-height: 51px;
+    color: var(--corail);
+}
+
+.location {
+    font-size: 18px;
+    font-weight: 500;
+    line-height: 26px;
+    color: var(--corail);
+}
+
+.infos_bloc_one ul {
+    display: flex;
+    gap: 15px;
+    list-style-type: none;
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 20px;
+    color: var(--white);
+}
+
+.infos_bloc_one ul li {
+    height: 25px;
+    border-radius: 10px;
+    margin-top: 20px;
+    padding: 0px 20px;
+    background-color: var(--corail);
+    line-height: 25px;
+}
+
+/** Bloc Two - Host, rating **/
+
+.infos_bloc_two {
+    display: flex;
+    flex-direction: column;
+    color: var(--corail);
+}
+
+/* ------ host ------*/
+.host {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.host span {
+    font-size: 18px;
+    line-height: 26px;
+    text-align: right;
+    width: min-content;
+}
+
+.avatar {
+    width: 64px;
+    height: 64px;
+    border-radius: 50%;
+    overflow: hidden;
+    margin-left: 8px;
+}
+.avatar img {
+    width: 64px;
+    object-fit: cover;
+    object-position: center;
+}
+
+/* ------ Rating ------*/
+.rating  {
+    margin-top: 20px;
+    display: flex;
+    gap: 10px;
+}
+
+.rating span {
+    font-size: 40px;
+    line-height: 40px;
+    text-align: right;
+
+}
+
+
+/************ INFOS MORE ************/
+
+.infos_more {
+    width: 100%;
+    display: flex;
+    gap: 60px;
+    margin :30px 0px 40px 0px;
+}
+
+/**** Description & Equipment****/
+.title_infos_more {
+    width:50%;
+    background-color: var(--cleargrey);
+    border-radius: 15px 15px 0px 0px;
+}
+
+.title_infos_more h2 {
+    color: var(--white);
+    background-color: var(--corail);
+    border-radius: 15px 15px 0px 0px;
+    padding: 10px;
+    font-size: 20px;
+    line-height: 26px;
+}
+
+.title_infos_more p {
+    padding: 10px;
+}
+
+.title_infos_more ul {
+    padding: 10px;
+}
+
+

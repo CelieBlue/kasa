@@ -8,6 +8,8 @@ export default function About() {
             <div className="banner">
                 <img src={ bannerAbout } alt="bannière paysage" />
             </div>
+
+            
         </>
     )
 }

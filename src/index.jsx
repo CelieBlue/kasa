@@ -6,7 +6,7 @@ import {
 } from 'react-router-dom';
 import AppLayout from './Layout/AppLayout';
 import Home, { loader as homeLoader } from './Pages/Home';
-import Accomodation from './Pages/Accomodation';
+import Accomodation from './Pages/Accomodations';
 import About from './Pages/About';
 import NotFound from './Components/NotFound';
 
@@ -23,7 +23,7 @@ const router = createBrowserRouter([
         loader: homeLoader,
       },
       {
-        path: 'Accomodation/:id',
+        path: '/Accomodations/:id',
         element: <Accomodation />,
         errorElement: <NotFound />,
         // loader: accomodationLoader,

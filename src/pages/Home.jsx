@@ -1,7 +1,6 @@
 import React from 'react';
 import { Link, useLoaderData } from 'react-router-dom';
 import bannerHome from '../assets/bannerHome.png';
-// import pictureDefault from '../assets/logement_default.jpg'
 import '../Styles/Layout.css'
 import '../Styles/Home.css';
 
@@ -10,12 +9,14 @@ import '../Styles/Home.css';
 //   return json(data);
 // };
 
+//fetch the data from the json file and return data
 export const loader = async() => {
   const res = await fetch("http://localhost:3000/accomodations.json");
   const data = await res.json();
   return data;
 }
 
+//This function retrieves the data by using userLoaderdata and assigns them to the corresponding values
 export default function Home() {
   const accomodations = useLoaderData();
 
@@ -31,8 +32,8 @@ export default function Home() {
         {accomodations.map((accomodation) => (
           <Link to={`accomodations/${accomodation.id}`}>
             <div className="card" key={`accomodation${accomodation.id}`}>
-              <img src={ accomodation.cover } alt="Illustration par défaut" />
-              <h2>Titre de la location</h2>
+              <img src={ accomodation.cover } alt="logement" />
+              <h2>{ accomodation.title}</h2>
             </div>
           </Link>
         ))}
