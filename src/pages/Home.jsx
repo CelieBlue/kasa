@@ -4,14 +4,9 @@ import bannerHome from '../assets/bannerHome.png';
 import '../Styles/Layout.css'
 import '../Styles/Home.css';
 
-// const homeLoader = async () => {
-//   const data = getSomeData();
-//   return json(data);
-// };
-
 //fetch the data from the json file and return data
 export const loader = async() => {
-  const res = await fetch("http://localhost:3000/accomodations.json");
+  const res = await fetch(`http://localhost:3000/accomodations.json`);
   const data = await res.json();
   return data;
 }

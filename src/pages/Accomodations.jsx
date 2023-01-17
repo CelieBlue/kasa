@@ -1,35 +1,48 @@
 import React from 'react';
-// import { useParams } from 'react-router-dom';
+import { useLoaderData } from 'react-router-dom';
+import Collapsible from "../Components/Collapsible";
 import '../Styles/Layout.css'
 import '../Styles/Accomodation.css';
+import '../Styles/About.css'
+
+//fetch the data from the json file and return data
+export const loader = async({params}) => {
+  const res = await fetch(`http://localhost:3000/accomodations.json/${params.id}`);
+  const data = await res.json();
+  return data;
+}
 
 export default function Accomodation() {
-    // const {id} = useParams();
+    const accomodations = useLoaderData();
+
     return (
         <>
-            <div className="slideshow">
-                <img src="https://s3-eu-west-1.amazonaws.com/course.oc-static.com/projects/front-end-kasa-project/accommodation-20-3.jpg" alt="logement 1" />
+        {accomodations.length > 0 ? (
+        <div className="accomodation">
+            {accomodations.map((accomodation) => (
+            <div className="slideshow" key={`accomodations${accomodation.id}`}>
+                <img src={accomodation.cover} alt="logement " />
             </div>
 
             <div className="infos">
                 <div className="infos_bloc_one">
-                    <h1>Titre Logement</h1>
+                    <h1>{accomodation.title}</h1>
                     <div className="location">
-                        Paris, Ile-de-France
+                       {accomodation.location}
                     </div>
                     <ul>
-                        <li>Cozy</li>
-                        <li>Canal</li>
-                        <li>Paris 10</li>
+                        <li>{accomodation.tags}</li>
                     </ul>
                 </div>
+
                 <div className="infos_bloc_two">
                     <div className="host">
-                        <span className="name">Alexandre Dumas</span>
+                        <span className="name">{accomodation.host}</span>
                         <div className="avatar">
-                            <img src="https://s3-eu-west-1.amazonaws.com/course.oc-static.com/projects/front-end-kasa-project/profile-picture-12.jpg" alt="hôte"/>
+                            <img src={accomodation.picture} alt="hôte"/>
                         </div>
                     </div>
+                    
                     <div className="rating">
                             <span>&#9733;</span>
                             <span>&#9733;</span>
@@ -41,7 +54,7 @@ export default function Accomodation() {
             </div>
 
             <div className="infos_more">
-                <div className="title_infos_more">
+                {/* <div className="title_infos_more">
                     <h2>Description</h2>
                     <p>Vous serez à 50m du canal Saint-martin...</p>
                 </div>
@@ -51,8 +64,17 @@ export default function Accomodation() {
                         <li>Climatisation</li>
                         <li>Wi-fi</li>
                     </ul>
-                </div>
+                </div> */}
+                <Collapsible label="Description">{accomodation.description}</Collapsible>
+                <p></p>
+                <Collapsible label="Equipments">{accomodation.equipment}</Collapsible>
+                <p></p>
             </div>
-        </>
+            ))}
+        </div>
+            ) : (
+                <p>Il n'y a pas d'informations sur ce logement pour le moment</p>
+            )};
+        </> 
     )
 }
