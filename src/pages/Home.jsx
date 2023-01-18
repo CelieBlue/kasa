@@ -1,8 +1,8 @@
 import React from 'react';
 import { Link, useLoaderData } from 'react-router-dom';
+import Banner from '../Components/Banner'
 import bannerHome from '../assets/bannerHome.png';
 import Card from '../Components/Card'
-import '../Styles/Layout.css'
 import '../Styles/Home.css';
 
 //fetch the data from the json file and return data
@@ -18,10 +18,11 @@ export default function Home() {
 
   return (
   <> 
-      <div className="banner">
-        <img src={ bannerHome } alt="bannière paysage" />
-        <h1>Chez vous, partout et ailleurs</h1>
-      </div>
+      <h1>Chez vous, partout et ailleurs</h1>
+      
+      <Banner 
+        img={ bannerHome }
+      />
 
       <div>
         {accomodations.length > 0 ? (

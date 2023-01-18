@@ -1,5 +1,17 @@
 /**************************** MAIN HOME ***************************/
 
+h1 {
+    position: absolute;
+    width: 85%;
+    margin-top: 80px;
+    font-size: 48px;
+    font-weight: 500;
+    line-height: 68px;
+    text-align: center;
+    color: var(--white);
+    z-index:2;
+}
+
 .accomodations {
     width: 100%;
     height: 100%;

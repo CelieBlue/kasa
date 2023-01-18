@@ -1,15 +1,16 @@
 import React from 'react'
 import bannerAbout from '../assets/bannerAbout.png';
+import Banner from '../Components/Banner'
 import Collapsible from "../Components/Collapsible";
-import '../Styles/Layout.css'
 import '../Styles/About.css'
 
 export default function About() {
     return(
         <> 
-            <div className="banner">
-                <img src={ bannerAbout } alt="bannière paysage" />
-            </div>
+            <Banner 
+                img={ bannerAbout }
+            />
+
             <div className="collapsible_container">
                 <Collapsible label="Fiabilité">
                     <p>Les annonces postées sur Kasa garantissent une fiabilité totale. Les photos sont conformes aux logements, et toutes les informations sont régulièrement vérifiées par nos équipes.</p>

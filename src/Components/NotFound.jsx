@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-
 import '../Styles/Layout.css';
+import '../Styles/NotFound.css'
 
 export default function Error() {
     return(

@@ -1,9 +1,7 @@
 import React from 'react';
 import { useLoaderData } from 'react-router-dom';
 import Collapsible from "../Components/Collapsible";
-import '../Styles/Layout.css'
 import '../Styles/Accomodation.css';
-import '../Styles/About.css'
 
 //fetch the data from the json file and return data
 export const loader = async({params}) => {
