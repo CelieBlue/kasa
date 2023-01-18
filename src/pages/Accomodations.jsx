@@ -7,9 +7,10 @@ import '../Styles/About.css'
 
 //fetch the data from the json file and return data
 export const loader = async({params}) => {
-  const res = await fetch(`http://localhost:3000/accomodations.json/${params.id}`);
-  const data = await res.json();
-  return data;
+    const id = params.id;
+    const res = await fetch(`http://localhost:3000/accomodations.json/accomodations/${id}`);
+    const data = await res.json();
+    return data;
 }
 
 export default function Accomodation() {
@@ -20,10 +21,14 @@ export default function Accomodation() {
         {accomodations.length > 0 ? (
         <div className="accomodation">
             {accomodations.map((accomodation) => (
+            <div>
+
+{/**************** SLIDESHOW *****************/}              
             <div className="slideshow" key={`accomodations${accomodation.id}`}>
                 <img src={accomodation.cover} alt="logement " />
             </div>
 
+{/**************** INFOS ACCOMODATIONS *****************/}  
             <div className="infos">
                 <div className="infos_bloc_one">
                     <h1>{accomodation.title}</h1>
@@ -35,6 +40,7 @@ export default function Accomodation() {
                     </ul>
                 </div>
 
+{/****** HOST & AVATAR & RATING *******/}
                 <div className="infos_bloc_two">
                     <div className="host">
                         <span className="name">{accomodation.host}</span>
@@ -53,6 +59,7 @@ export default function Accomodation() {
                 </div>
             </div>
 
+{/**************** DESCRIPTION & EQUIPMENT *****************/}  
             <div className="infos_more">
                 {/* <div className="title_infos_more">
                     <h2>Description</h2>
@@ -70,7 +77,8 @@ export default function Accomodation() {
                 <Collapsible label="Equipments">{accomodation.equipment}</Collapsible>
                 <p></p>
             </div>
-            ))}
+            </div>))
+            }
         </div>
             ) : (
                 <p>Il n'y a pas d'informations sur ce logement pour le moment</p>

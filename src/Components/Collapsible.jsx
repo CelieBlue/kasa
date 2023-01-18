@@ -1,5 +1,5 @@
 import React, {useState} from "react";
-import arrow_down from "../assets/arrow."
+import arrow_down from "../assets/arrow_down.png"
 import "../Styles/Collapsible.css";
 
 export default function Collapsible(props){

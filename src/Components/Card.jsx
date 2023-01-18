@@ -1,11 +1,15 @@
 import React from 'react'
-import { Link } from 'react-router-dom';
 import '../Styles/Home.css';
 
-export default function Card({ title }) {
+export default function Card(props) {
+
     return (
-        <div className="card">
-            <span><Link to="/Accomodation/1">{title}</Link></span>
-        </div>
+
+        <>
+              <div className="card">
+                <img src={ props.img } alt="logement" />
+                <h2>{ props.title }</h2>
+              </div>
+        </>
     )
 }

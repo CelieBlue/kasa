@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link, useLoaderData } from 'react-router-dom';
 import bannerHome from '../assets/bannerHome.png';
+import Card from '../Components/Card'
 import '../Styles/Layout.css'
 import '../Styles/Home.css';
 
@@ -21,21 +22,27 @@ export default function Home() {
         <img src={ bannerHome } alt="bannière paysage" />
         <h1>Chez vous, partout et ailleurs</h1>
       </div>
-       
-    {accomodations.length > 0 ? (
-      <div className="accomodations">
-        {accomodations.map((accomodation) => (
-          <Link to={`accomodations/${accomodation.id}`}>
-            <div className="card" key={`accomodation${accomodation.id}`}>
-              <img src={ accomodation.cover } alt="logement" />
-              <h2>{ accomodation.title}</h2>
-            </div>
+
+      <div>
+        {accomodations.length > 0 ? (
+        <div className="accomodations">
+          {accomodations.map((accomodation) => (
+          
+          <Link to={`/Accomodations/${accomodation.id}`}>
+              <Card
+                key={`props${accomodation.id}`}
+                img={accomodation.cover}
+                title={accomodation.title}
+              />
           </Link>
+
         ))}
-      </div>
-    ) : (
-      <p>Il n'y a pas d'hébergement pour le moment</p>
-    )}
+        </div>
+       ) : (
+        <p>Il n'y a pas d'hébergement pour le moment</p> 
+      )}
+     </div>
+      
   </>
   );
 }
