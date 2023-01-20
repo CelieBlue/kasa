@@ -1,31 +1,37 @@
 import React from 'react';
-import { useLoaderData } from 'react-router-dom';
+import accomodations from '../logements.json'
+import { useParams, useLoaderData } from 'react-router-dom';
 import Collapsible from "../Components/Collapsible";
 import '../Styles/Accomodation.css';
 
-//fetch the data from the json file and return data
-export const loader = async({params}) => {
-    const id = params.id;
-    const res = await fetch(`http://localhost:3000/accomodations.json/accomodations/${id}`);
-    const data = await res.json();
-    return data;
+
+export async function loader() {
+    return accomodations;
 }
 
 export default function Accomodation() {
     const accomodations = useLoaderData();
 
+// Methode find() to find the id that is send in the URL 
+//and compare it to the id in the data
+    const params = useParams();
+    const accomodationInfos = accomodations.find(accomodation =>
+         accomodation.id === params.id);
+
     return (
         <>
-        {accomodations.length > 0 ? (
-        <div className="accomodation">
-            {accomodations.map((accomodation) => (
-            <div>
+        
+        <div>  
+            {accomodationInfos.length > 0 ? (
+                <div className="accomodation">
+                    {accomodationInfos.map((accomodation, index) => (
+                        <div key={accomodation.id}>
 
 {/**************** SLIDESHOW *****************/}              
-            <div className="slideshow" key={`accomodations${accomodation.id}`}>
-                <img src={accomodation.cover} alt="logement " />
-            </div>
-
+                        <div className="slideshow">
+                            <img src={accomodation.cover} alt="logement " />
+                        </div>
+                        
 {/**************** INFOS ACCOMODATIONS *****************/}  
             <div className="infos">
                 <div className="infos_bloc_one">
@@ -70,10 +76,12 @@ export default function Accomodation() {
                         <li>Wi-fi</li>
                     </ul>
                 </div> */}
-                <Collapsible label="Description">{accomodation.description}</Collapsible>
-                <p></p>
-                <Collapsible label="Equipments">{accomodation.equipment}</Collapsible>
-                <p></p>
+                <Collapsible label="Description">
+                    <p>{accomodation.description}</p>
+                </Collapsible>
+                <Collapsible label="Equipments">
+                    <p>{accomodation.equipment}</p>
+                </Collapsible>
             </div>
             </div>))
             }
@@ -81,6 +89,7 @@ export default function Accomodation() {
             ) : (
                 <p>Il n'y a pas d'informations sur ce logement pour le moment</p>
             )};
+        </div>
         </> 
     )
 }

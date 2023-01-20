@@ -7,19 +7,19 @@
     color: var(--corail);
 }
 
-.errorNumber {
+.error_number {
     font-size: 288px;
     line-height: 410px;
     font-weight: 700;
 }
 
-.error h1 {
+.oups {
     font-size: 36px;
     line-height: 51px;
     font-weight: 500;
 }
 
-.error p {
+.link_home {
     font-size: 18px;
     line-height: 25px;
     font-weight: 500;
@@ -27,7 +27,7 @@
     margin-bottom: 40px;
 }
 
-.error a {
+.link_home a {
     color: var(--corail);
     text-decoration: underline var(--corail);
 }
