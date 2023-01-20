@@ -2,6 +2,7 @@ import React from 'react'
 import bannerAbout from '../assets/bannerAbout.png';
 import Banner from '../Components/Banner'
 import Collapsible from "../Components/Collapsible";
+import Slider from "../Components/Slider"
 import '../Styles/About.css'
 
 export default function About() {
@@ -10,6 +11,8 @@ export default function About() {
             <Banner 
                 img={ bannerAbout }
             />
+
+            <Slider />
 
             <div className="collapsible_container">
                 <Collapsible label="Fiabilité">
