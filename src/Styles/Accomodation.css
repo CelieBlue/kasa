@@ -21,19 +21,21 @@
     margin-top: 30px;
 }
 
+.infos h1 {
+    width:100%;
+    font-size: 36px;
+    font-weight: 500;
+    line-height: 51px;
+    color: var(--corail);
+}
+
 /** Bloc One - Title, Location **/
 
 .infos_bloc_one {
     display: flex;
     flex-direction: column;
+    width: 60%;
     /* gap: 10px; */
-}
-
-.infos_bloc_one h1 {
-    font-size: 36px;
-    font-weight: 500;
-    line-height: 51px;
-    color: var(--corail);
 }
 
 .location {
@@ -46,6 +48,7 @@
 .infos_bloc_one ul {
     display: flex;
     gap: 15px;
+    margin-top: 20px;
     list-style-type: none;
     font-size: 14px;
     font-weight: 500;
@@ -56,7 +59,6 @@
 .infos_bloc_one ul li {
     height: 25px;
     border-radius: 10px;
-    margin-top: 20px;
     padding: 0px 20px;
     background-color: var(--corail);
     line-height: 25px;
@@ -122,6 +124,7 @@
 }
 
 /**** Description & Equipment****/
+
 .title_infos_more {
     width:50%;
     background-color: var(--cleargrey);
@@ -133,16 +136,14 @@
     background-color: var(--corail);
     border-radius: 15px 15px 0px 0px;
     padding: 10px;
-    font-size: 20px;
+    font-size: 18px;
+    font-weight: 500;
     line-height: 26px;
 }
 
 .title_infos_more p {
     padding: 10px;
+    font-size: 19px;
+    font-weight: 400;
+    line-height : 26px;
 }
-
-.title_infos_more ul {
-    padding: 10px;
-}
-
-

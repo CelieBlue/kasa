@@ -17,7 +17,9 @@ export default function Home() {
   
   return (
   <> 
-      <h1>Chez vous, partout et ailleurs</h1>
+      <div className="home">
+        <h1>Chez vous, partout et ailleurs</h1>
+      </div>
 
       <Banner 
         img={ bannerHome }

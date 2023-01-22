@@ -1,6 +1,6 @@
 /**************************** MAIN HOME ***************************/
 
-h1 {
+.home h1 {
     position: absolute;
     width: 85%;
     margin-top: 80px;

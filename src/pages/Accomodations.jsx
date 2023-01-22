@@ -19,11 +19,19 @@ export default function Accomodation() {
     const accomodationInfos = accomodations.find((accomodation) =>
         accomodation.id === params.id);
         console.log(params.id);
+
+    const tagsAccomodation = accomodationInfos.tags.map((tags, index) => {
+        return <li key={index}>{tags}</li>
+    })
+
+    const equipmentAccomodation = accomodationInfos.equipments.map((equipments, index) => {
+        return <p key={index}>{equipments}</p>
+    })
         
     return (
         <>
-                <div className="accomodation">
-                        <div key={accomodationInfos.id}>
+                <div className="accomodation" key={accomodationInfos.id}>
+                        
 
 {/**************** SLIDESHOW *****************/}              
                             <div className="slideshow">
@@ -31,35 +39,35 @@ export default function Accomodation() {
                             </div>
                         
 {/**************** INFOS ACCOMODATIONS *****************/}  
-                        {/* <div className="infos">
+                        <div className="infos">
+                            <h1>{accomodationInfos.title}</h1>
                             <div className="infos_bloc_one">
-                                <h1>{accomodationInfos.title}</h1>
                                 <div className="location">
                                     {accomodationInfos.location}
                                 </div>
                                 <ul>
-                                    <li>{accomodationInfos.tags}</li>
+                                    {tagsAccomodation}
                                 </ul>
-                            </div> */}
+                            </div>
 
 {/****** HOST & AVATAR & RATING *******/}
-                        {/* <div className="infos_bloc_two">
-                            <div className="host">
-                                <span className="name">{accomodationInfos.host}</span>
-                                <div className="avatar">
-                                    <img src={accomodationInfos.picture} alt="hôte"/>
+                            <div className="infos_bloc_two">
+                                <div className="host">
+                                    <span className="name">{accomodationInfos.host.name}</span>
+                                    <div className="avatar">
+                                        <img src={accomodationInfos.host.picture} alt="hôte"/>
+                                    </div>
                                 </div>
-                            </div>
                     
-                            <div className="rating">
-                                <span>&#9733;</span>
-                                <span>&#9733;</span>
-                                <span>&#9733;</span>
-                                <span>&#9733;</span>
-                                <span>&#9733;</span>
+                                {/* <div className="rating">
+                                    <span>&#9733;</span>
+                                    <span>&#9733;</span>
+                                    <span>&#9733;</span>
+                                    <span>&#9733;</span>
+                                    <span>&#9733;</span>
+                                </div> */}
                             </div>
                         </div>
-                    </div> */}
 
 {/**************** DESCRIPTION & EQUIPMENT *****************/}  
                     <div className="infos_more">
@@ -67,12 +75,12 @@ export default function Accomodation() {
                             <p>{accomodationInfos.description}</p>
                         </Collapsible>
                         <Collapsible label="Equipments">
-                            <p>{accomodationInfos.equipment}</p>
+                            {equipmentAccomodation}
                         </Collapsible>
                     </div>
                 </div>
 
-            </div>
+          
         </> 
     )
 }

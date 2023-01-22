@@ -7,13 +7,17 @@ const [isOpen, setIsOpen] = useState(false)
 
     return (
         
-        <div className="collapsible">
+        <>
             <div className="toggle" onClick={() => 
                 setIsOpen(!isOpen)}>
                 {props.label}
                 <img src={arrow_down} alt="ouvrir"/>
             </div>
-            { isOpen && <div className="text_content">{props.children}</div>}
-        </div>
+            { isOpen && 
+            <div className="text_content">
+                {props.children}
+            </div>
+            }
+        </>
     );
 }
