@@ -5,10 +5,23 @@
     border-radius: 25px;
 }
 
-.caroussel_Inner {
-    /* height: 100%; */
-    width: 100%;
+.carousselInner {
+    height: 100%;
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    color: var(--white);
+}
+
+.carousselInner .left {
+    width: 5%;
+    cursor: pointer;
+}
+
+.carousselInner .right {
+    width: 5%;
+    cursor: pointer;
 }
