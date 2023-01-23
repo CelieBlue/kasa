@@ -2,7 +2,7 @@ import React from 'react'
 import accomodations from '../logements.json'
 import { useParams, useLoaderData } from 'react-router-dom'
 import Collapsible from "../Components/Collapsible"
-// import Slider from "../Components/Slider"
+import Caroussel from "../Components/Caroussel"
 import '../Styles/Accomodation.css'
 
 
@@ -20,22 +20,25 @@ export default function Accomodation() {
         accomodation.id === params.id);
         console.log(params.id);
 
+    //Search for the tags in the array "tags" in the data of one product with the map() method
     const tagsAccomodation = accomodationInfos.tags.map((tags, index) => {
         return <li key={index}>{tags}</li>
     })
-
+    //Search for the equipments in the array "equipments"
     const equipmentAccomodation = accomodationInfos.equipments.map((equipments, index) => {
         return <p key={index}>{equipments}</p>
     })
-        
+    
     return (
         <>
                 <div className="accomodation" key={accomodationInfos.id}>
                         
 
-{/**************** SLIDESHOW *****************/}              
+{/**************** CAROUSSEL *****************/}  
+                                      
                             <div className="slideshow">
-                                <img src={accomodationInfos.cover} alt="logement " />
+                            <Caroussel images={accomodationInfos.pictures}/> 
+                                
                             </div>
                         
 {/**************** INFOS ACCOMODATIONS *****************/}  

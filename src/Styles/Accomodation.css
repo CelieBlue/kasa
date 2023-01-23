@@ -127,6 +127,7 @@
 
 .title_infos_more {
     width:50%;
+    flex-shrink: 1;
     background-color: var(--cleargrey);
     border-radius: 15px 15px 0px 0px;
 }
@@ -142,6 +143,7 @@
 }
 
 .title_infos_more p {
+    display: inline-block;
     padding: 10px;
     font-size: 19px;
     font-weight: 400;

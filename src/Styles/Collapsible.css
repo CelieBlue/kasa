@@ -16,6 +16,7 @@
 }
 
 .text_content {
+    width: 100%;
     background-color: var(--cleargrey);
     border-radius: 0px 0px 5px 5px;
     color: var(--corail);
