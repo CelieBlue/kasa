@@ -1,5 +1,6 @@
 /**************************** MAIN HOME ***************************/
 
+
 .home h1 {
     position: absolute;
     width: 85%;
@@ -8,6 +9,7 @@
     font-weight: 500;
     line-height: 68px;
     text-align: center;
+    vertical-align: middle;
     color: var(--white);
     z-index:2;
 }
@@ -23,4 +25,19 @@
     flex-wrap: wrap;
     gap: 42px;
     justify-content: space-evenly;    
+}
+
+@media only screen and (max-width: 768px) {
+
+    .home h1 {
+        font-size: 30px;
+        line-height: 32px;
+        margin-top: 30px;
+    }
+    .accomodations {
+        margin-top: 0px;
+        background-color: var(--white);
+        gap: 25px;    
+    }
+    
 }

@@ -10,7 +10,6 @@ import Accomodation, { loader as accomodationLoader } from './Pages/Accomodation
 import About from './Pages/About';
 import NotFound from './Components/NotFound';
 
-
 const router = createBrowserRouter([
   {
     path: '/',

@@ -30,3 +30,26 @@
     line-height: 26px;
     z-index: 2;
 }
+
+@media only screen and (max-width: 768px) {
+
+    .card {
+        width:335px;
+        height:111px;
+        }
+
+    .card img {
+        position: absolute;
+        width: 335px;
+        height: 111px;  
+    }
+    .card h2 {
+        position: absolute;
+        padding: 10px;
+        color: var(--white);
+        font-size: 16px;
+        font-weight: 500px;
+        line-height: 22px;
+        z-index: 2;
+    }
+}

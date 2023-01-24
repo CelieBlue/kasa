@@ -70,6 +70,7 @@
 
 .host span {
     font-size: 18px;
+    font-weight: 500;
     line-height: 26px;
     text-align: right;
     width: min-content;
@@ -100,28 +101,18 @@
 .infos_more {
     width: 100%;
     display: flex;
-    gap: 60px;
+    gap: 5%;
     margin :30px 0px 40px 0px;
 }
 
 /**** Description & Equipment****/
 
-/* .title_infos_more {
-    width:50%;
-    background-color: var(--cleargrey);
-    border-radius: 15px 15px 0px 0px;
-} */
-
-.infos_more_title {
-    color: var(--white);
-    background-color: var(--corail);
-    border-radius: 15px 15px 0px 0px;
+.infos_more h2 {
     padding: 10px;
     font-size: 18px;
     font-weight: 500;
-    line-height: 26px;
+    line-height : 26px;
 }
-
 .infos_more p {
     padding: 10px;
     font-size: 18px;
@@ -133,4 +124,72 @@
     font-size: 18px;
     font-weight: 400;
     line-height : 10px;
+}
+
+@media only screen and (max-width: 768px) {
+
+    .infos {
+        margin-top: 10px;
+    }
+    .infos h1 {
+        font-size: 18px;
+        line-height: 26px;
+    }
+    .location {
+        font-size: 14px;
+        line-height: 20px;
+    }
+
+    .infos_bloc_one ul {
+        gap: 10px;
+        margin-top: 10px;
+        font-size: 10px;
+    }
+    .infos_bloc_one ul li {
+        height: 20px;
+        border-radius: 10px;
+        padding: 0px 12px;
+        line-height: 18px;
+    } 
+
+    .infos_bloc_two {
+        width: 100%;
+        display: flex;
+        flex-direction:row-reverse;
+        justify-content: space-between;
+        color: var(--corail);
+    }
+    .host span {
+        font-size: 12px;
+        line-height: 17px;
+    }
+    .avatar {
+        width: 32px;
+        height: 32px;
+    }
+    .avatar img {
+        width: 32px;
+
+    }
+
+    .infos_more {
+        flex-direction: column;
+        gap: 5%;
+        margin :0px 0px 20px 0px;
+    }
+    .infos_more h2 {
+        padding: 10px;
+        font-size: 13px;
+        line-height : 18px;
+    }
+    .infos_more p {
+        padding: 10px;
+        font-size: 12px;
+        line-height : 17px;
+    }
+    .infos_more_equipment p {
+        padding: 10px;
+        font-size: 12px;
+        line-height : 0px;
+    }
 }
