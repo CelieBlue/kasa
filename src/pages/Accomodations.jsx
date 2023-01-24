@@ -3,6 +3,7 @@ import accomodations from '../logements.json'
 import { useParams, useLoaderData } from 'react-router-dom'
 import Collapsible from "../Components/Collapsible"
 import Caroussel from "../Components/Caroussel"
+import Rating from "../Components/Rating"
 import '../Styles/Accomodation.css'
 
 
@@ -36,11 +37,8 @@ export default function Accomodation() {
 
 {/**************** CAROUSSEL *****************/}  
                                       
-                            <div className="slideshow">
-                            <Caroussel images={accomodationInfos.pictures}/> 
-                                
-                            </div>
-                        
+                                <Caroussel images={accomodationInfos.pictures}/> 
+                                                       
 {/**************** INFOS ACCOMODATIONS *****************/}  
                         <div className="infos">
                             <h1>{accomodationInfos.title}</h1>
@@ -62,13 +60,9 @@ export default function Accomodation() {
                                     </div>
                                 </div>
                     
-                                {/* <div className="rating">
-                                    <span>&#9733;</span>
-                                    <span>&#9733;</span>
-                                    <span>&#9733;</span>
-                                    <span>&#9733;</span>
-                                    <span>&#9733;</span>
-                                </div> */}
+                                <div className="rating">
+                                  <Rating rating={accomodationInfos.rating} />
+                                </div>
                             </div>
                         </div>
 

@@ -8,7 +8,7 @@ export default function Caroussel ({images}) {
     const [currImg, setCurrImg] = useState(0);
 
     return (
-        <div className="carousel">
+        <div className="caroussel">
             <div className="carousselInner"
              style={{ backgroundImage: `url(${images[currImg]})`}}>
             
