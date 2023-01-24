@@ -95,14 +95,6 @@
     gap: 10px;
 }
 
-/* .rating span {
-    font-size: 40px;
-    line-height: 40px;
-    text-align: right;
-
-} */
-
-
 /************ INFOS MORE ************/
 
 .infos_more {
@@ -114,14 +106,13 @@
 
 /**** Description & Equipment****/
 
-.title_infos_more {
+/* .title_infos_more {
     width:50%;
-    flex-shrink: 1;
     background-color: var(--cleargrey);
     border-radius: 15px 15px 0px 0px;
-}
+} */
 
-.title_infos_more h2 {
+.infos_more_title {
     color: var(--white);
     background-color: var(--corail);
     border-radius: 15px 15px 0px 0px;
@@ -131,10 +122,15 @@
     line-height: 26px;
 }
 
-.title_infos_more p {
-    display: inline-block;
+.infos_more p {
     padding: 10px;
-    font-size: 19px;
+    font-size: 18px;
     font-weight: 400;
     line-height : 26px;
+}
+.infos_more_equipment p {
+    padding: 10px;
+    font-size: 18px;
+    font-weight: 400;
+    line-height : 10px;
 }

@@ -68,11 +68,11 @@ export default function Accomodation() {
 
 {/**************** DESCRIPTION & EQUIPMENT *****************/}  
                     <div className="infos_more">
-                        <Collapsible label="Description">
+                        <Collapsible label="Description" className="infos_more_title">
                             <p>{accomodationInfos.description}</p>
                         </Collapsible>
-                        <Collapsible label="Equipments">
-                            {equipmentAccomodation}
+                        <Collapsible label="Equipments" className="infos_more_title">
+                            <p className='infos_more_equipment'>{equipmentAccomodation}</p>
                         </Collapsible>
                     </div>
                 </div>

@@ -7,7 +7,7 @@ const [isOpen, setIsOpen] = useState(false)
 
     return (
         
-        <>
+        <div className="collapsible">
             <div className="toggle" onClick={() => 
                 setIsOpen(!isOpen)}>
                 {props.label}
@@ -18,6 +18,6 @@ const [isOpen, setIsOpen] = useState(false)
                 {props.children}
             </div>
             }
-        </>
+        </div>
     );
 }

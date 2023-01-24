@@ -8,36 +8,36 @@ import AppLayout from './Layout/AppLayout';
 import Home, { loader as homeLoader } from './Pages/Home';
 import Accomodation, { loader as accomodationLoader } from './Pages/Accomodations';
 import About from './Pages/About';
-// import NotFound from './Components/NotFound';
+import NotFound from './Components/NotFound';
 
 
 const router = createBrowserRouter([
   {
     path: '/',
     element: <AppLayout />,
-    // errorElement: <NotFound />,
+    errorElement: <NotFound />,
     children: [
       {
         path: '/',
         element: <Home />,
-        // errorElement: <NotFound />,
+        errorElement: <NotFound />,
         loader: homeLoader,
       },
       {
         path: '/Accomodations/:id',
         element: <Accomodation />,
-        // errorElement: <NotFound />,
+        errorElement: <NotFound />,
         loader: accomodationLoader,
       },
       {
         path: '/About',
         element: <About />,
-        // errorElement: <NotFound />,
+        errorElement: <NotFound />,
       },
-      // {
-      //   path: '*',
-      //   element: <NotFound />,
-      // },
+      {
+        path: '*',
+        element: <NotFound />,
+      },
     ]
   }
 ]);
