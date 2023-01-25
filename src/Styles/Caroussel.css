@@ -17,7 +17,7 @@
 .carousselInner .left {
     width: 5%;
     height: 100%;
-    padding-left:15px;
+    padding-left:10px;
     cursor: pointer;
     display : grid;
     place-items: center;
@@ -40,5 +40,11 @@
     }
     .carousselInner {
         border-radius: 10px;
-    } 
+    }
+    .carousselInner .left img {
+       transform: scale(0.30, 0.30);
+    }
+    .carousselInner .right img {
+        transform: scale(0.30, 0.30);
+     }
 }

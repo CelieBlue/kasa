@@ -1,6 +1,5 @@
 /**************************** MAIN HOME ***************************/
 
-
 .home h1 {
     position: absolute;
     width: 85%;
@@ -9,7 +8,6 @@
     font-weight: 500;
     line-height: 68px;
     text-align: center;
-    vertical-align: middle;
     color: var(--white);
     z-index:2;
 }
@@ -30,14 +28,17 @@
 @media only screen and (max-width: 768px) {
 
     .home h1 {
-        font-size: 30px;
-        line-height: 32px;
-        margin-top: 30px;
-    }
-    .accomodations {
-        margin-top: 0px;
-        background-color: var(--white);
-        gap: 25px;    
-    }
-    
+        margin-top: 25px;
+        font-size: 24px;
+        line-height: 36px;
+        z-index:2;
+    }    
+}
+.accomodations {
+    height: 100%;
+    margin-top: -20px;
+    background-color: var(--white);
+    display:flex;
+    gap: 22px;
+    justify-content: space-evenly;    
 }

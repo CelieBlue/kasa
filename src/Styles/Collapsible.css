@@ -8,6 +8,7 @@
     margin-top: 18px;
     padding: 0px 20px;
     border-radius: 5px;
+    vertical-align: middle;
     background: var(--corail);
     color: var(--white);
     text-align: left;
@@ -39,16 +40,9 @@
     .collapsible .toggle {
         height: 30px;
         margin-top: 10px;
-        vertical-align: middle;
         padding: 0px 0px;
-        border-radius: 5px;
-        background: var(--corail);
-        color: var(--white);
-        text-align: left;
-        border: none;
-        cursor: pointer;
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
+    }
+    .collapsible .toggle img {
+        transform: scale(0.50, 0.50);
     } 
 }

@@ -23,8 +23,6 @@
 .infos_bloc_one {
     display: flex;
     flex-direction: column;
-    width: 60%;
-    /* gap: 10px; */
 }
 
 .location {
@@ -36,6 +34,7 @@
 
 .infos_bloc_one ul {
     display: flex;
+    flex-wrap: wrap;
     gap: 15px;
     margin-top: 20px;
     list-style-type: none;
@@ -92,8 +91,8 @@
 /* ------ Rating ------*/
 .rating  {
     margin-top: 20px;
-    display: flex;
-    gap: 10px;
+    text-align: right;
+    font-size: 32px;
 }
 
 /************ INFOS MORE ************/
@@ -102,7 +101,7 @@
     width: 100%;
     display: flex;
     gap: 5%;
-    margin :30px 0px 40px 0px;
+    margin :20px 0px 40px 0px;
 }
 
 /**** Description & Equipment****/
@@ -170,6 +169,13 @@
     .avatar img {
         width: 32px;
 
+    }
+    .rating  {
+        margin-top: 20px;
+        text-align: right;
+        font-size: 18px;
+        letter-spacing : 6px;
+    
     }
 
     .infos_more {

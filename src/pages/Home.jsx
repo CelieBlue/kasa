@@ -18,12 +18,13 @@ export default function Home() {
   return (
   <> 
       <div className="home">
-        <h1>Chez vous, partout et ailleurs</h1>
+      <h1>Chez vous, partout et ailleurs</h1>
+        <Banner 
+          img={ bannerHome }
+        />
       </div>
 
-      <Banner 
-        img={ bannerHome }
-      />
+      
 
       <div>
         {accomodations.length > 0 ? (
